@@ -27,6 +27,6 @@
     "typescript": "^4.2.3"
   },
   "optionalDependencies": {
-    "rescript": "^11.0.0"
+    "rescript": "^12.0.0"
   }
 }

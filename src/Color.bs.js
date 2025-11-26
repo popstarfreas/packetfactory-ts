@@ -4,10 +4,10 @@
 
 function make(r, g, b) {
   return {
-          R: r,
-          G: g,
-          B: b
-        };
+    R: r,
+    G: g,
+    B: b
+  };
 }
 
 exports.make = make;
