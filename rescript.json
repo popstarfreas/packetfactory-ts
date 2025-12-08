@@ -8,8 +8,8 @@
     },
     "package-specs": {
         "module": "commonjs",
-        "in-source": true,
-        "suffix": ".bs.js"
+        "in-source": false,
+        "suffix": ".js"
     },
     "dependencies": [
         "@popstarfreas/rescript-nodejs"
