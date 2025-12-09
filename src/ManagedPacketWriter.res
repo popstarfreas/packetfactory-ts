@@ -1,7 +1,7 @@
 // This packet writer automatically allocates a buffer
 type untypedT
 type t
-@new @module("@popstarfreas/packetfactory/packetwriter") external make: unit => untypedT = "default"
+@new @module("@popstarfreas/packetfactory/packetwriter.js") external make: unit => untypedT = "default"
 
 @send external setType_: (untypedT, int) => t = "setType"
 let setType = (untypedT, packetType) => setType_(untypedT, packetType)

@@ -8,4 +8,4 @@ type getPacketsResult = {
     packets: array<packet>,
 }
 
-@bs.new @bs.module("@popstarfreas/packetfactory/utils") external getPacketsFromBuffer: NodeJs.Buffer.t => getPacketsResult = "getPacketsFromBuffer"
+@new @module("@popstarfreas/packetfactory/utils.js") external getPacketsFromBuffer: NodeJs.Buffer.t => getPacketsResult = "getPacketsFromBuffer"

@@ -1,5 +1,5 @@
 type t = {mutable head: int}
-@new @module("@popstarfreas/packetfactory/bufferreader")
+@new @module("@popstarfreas/packetfactory/bufferreader.js")
 external make: NodeJs.Buffer.t => t = "default"
 @send external readByte: t => int = "readByte"
 @send external readBytes: (t, int) => array<int> = "readBytes"

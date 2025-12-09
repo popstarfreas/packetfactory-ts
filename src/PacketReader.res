@@ -1,5 +1,5 @@
 type t
-@new @module("@popstarfreas/packetfactory/packetreader")
+@new @module("@popstarfreas/packetfactory/packetreader.js")
 external make: NodeJs.Buffer.t => t = "default"
 @send external readByte: t => int = "readByte"
 @send external readBytes: (t, int) => array<int> = "readBytes"

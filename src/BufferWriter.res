@@ -1,5 +1,5 @@
 type t
-@new @module("@popstarfreas/packetfactory/bufferwriter")
+@new @module("@popstarfreas/packetfactory/bufferwriter.js")
 external make: NodeJs.Buffer.t => t = "default"
 
 @send external packByte: (t, int) => t = "packByte"
