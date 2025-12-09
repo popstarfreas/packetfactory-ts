@@ -1,13 +1,12 @@
 {
     "name": "@popstarfreas/packetfactory",
     "namespace": "PacketFactory",
-    "version": "1.0.0",
     "sources": {
         "dir": "src",
         "subdirs": true
     },
     "package-specs": {
-        "module": "commonjs",
+        "module": "es6",
         "in-source": false,
         "suffix": ".js"
     },

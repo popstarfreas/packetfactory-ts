@@ -1,5 +1,6 @@
 {
   "name": "@popstarfreas/packetfactory",
+  "type": "module",
   "version": "6.3.0",
   "repository": {
     "type": "git",
