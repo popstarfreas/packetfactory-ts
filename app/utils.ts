@@ -1,9 +1,6 @@
 import * as path from 'path';
 import RawPacket from './rawpacket.js';
 import BufferReader from './bufferreader.js';
-import * as utf8 from 'utf8';
-import PacketWriter from './packetwriter.js';
-import BufferWriter from './bufferwriter.js';
 
 export interface BuffersPackets {
   bufferPacket: Buffer;
@@ -17,15 +14,6 @@ export function bufferToText(buf: Buffer): string {
     str += String.fromCharCode(reader.readByte());
   }
   return str;
-}
-
-export function textToBuffer(str: string): Buffer {
-  const writer = new BufferWriter(Buffer.allocUnsafe(str.length));
-  for (var i = 0, l = str.length; i < l; i++) {
-    writer.packByte(str.charCodeAt(i));
-  }
-
-  return writer.data;
 }
 
 export function getProperIP(ip: string | undefined): string | undefined {
@@ -99,7 +87,7 @@ export function requireNoCache(filePath: string, require: NodeRequire) {
 }
 
 export function getPackedStringByteLen(str: string) {
-  const strLen = textToBuffer(utf8.encode(str)).length;
+  const strLen = Buffer.from(str, "utf8").length;
   if (strLen >= 128) {
     return 2 + strLen;
   }

@@ -1,5 +1,3 @@
-import { textToBuffer } from './utils.js';
-import * as utf8 from 'utf8';
 import NetworkText from './networktext.js';
 import Writer from './writer.js';
 
@@ -98,7 +96,7 @@ class BufferWriter implements Writer {
     }
 
     public packString(str: string) {
-        const packedStr = textToBuffer(utf8.encode(str));
+        const packedStr = Buffer.from(str, "utf8");
         const strLen = packedStr.length;
 
         if (strLen >= 128) {

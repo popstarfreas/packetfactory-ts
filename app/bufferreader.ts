@@ -1,7 +1,5 @@
 import Color from "./color.js";
 import NetworkText from "./networktext.js";
-import { bufferToText } from "./utils.js";
-import * as utf8 from "utf8";
 
 /**
  * Reads datatypes from a hex string
@@ -210,8 +208,7 @@ class BufferReader {
         }
 
         // Read string content using length
-        const rawText = bufferToText(this._data.slice(this.head, this.head + strLength));
-        const strContent: string = utf8.decode(rawText);
+        const strContent: string = this._data.slice(this.head, this.head + strLength).toString("utf8");
         this.head += strLength;
         return strContent;
     }

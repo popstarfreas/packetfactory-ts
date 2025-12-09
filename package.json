@@ -17,13 +17,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@popstarfreas/rescript-nodejs": "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7",
-    "utf8": "^2.1.2"
+    "@popstarfreas/rescript-nodejs": "git+https://github.com/popstarfreas/rescript-nodejs.git#f3bd284a3ef17a3fc7cc81ccb7c362b278ea66c7"
   },
   "devDependencies": {
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.7.3",
-    "@types/utf8": "^2.1.5",
     "jasmine": "^3.4.0",
     "typescript": "^4.2.3"
   },
