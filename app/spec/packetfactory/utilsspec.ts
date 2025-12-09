@@ -1,5 +1,5 @@
-import * as utils from "../../utils";
-import BufferWriter from "../../bufferwriter";
+import * as utils from "../../utils.js";
+import BufferWriter from "../../bufferwriter.js";
 
 describe("utils", () => {
     it("should correctly buffer an incomplete packet", () => {
@@ -17,14 +17,14 @@ describe("utils", () => {
     });
 
     it("should correctly read a correct packet and buffer"
-      +" the incomplete packet length of the next", () => {
-        const bufA = new BufferWriter(Buffer.allocUnsafe(3)).packUInt16(3).packByte(0).data;
-        const bufB = new BufferWriter(Buffer.allocUnsafe(1)).packByte(4).data;
-        const res = utils.getPacketsFromBuffer(Buffer.concat([bufA, bufB]));
-        expect(res.packets.length).toEqual(1);
-        expect(res.packets[0].data.toString("hex")).toEqual(bufA.toString("hex"));
-        expect(res.bufferPacket.toString("hex")).toEqual(bufB.toString("hex"));
-    });
+        + " the incomplete packet length of the next", () => {
+            const bufA = new BufferWriter(Buffer.allocUnsafe(3)).packUInt16(3).packByte(0).data;
+            const bufB = new BufferWriter(Buffer.allocUnsafe(1)).packByte(4).data;
+            const res = utils.getPacketsFromBuffer(Buffer.concat([bufA, bufB]));
+            expect(res.packets.length).toEqual(1);
+            expect(res.packets[0].data.toString("hex")).toEqual(bufA.toString("hex"));
+            expect(res.bufferPacket.toString("hex")).toEqual(bufB.toString("hex"));
+        });
 
     it("should correctly separate two packets", () => {
         const bufA = new BufferWriter(Buffer.allocUnsafe(3)).packUInt16(3).packByte(0).data;

@@ -1,4 +1,4 @@
-import BufferReader from '../../bufferreader';
+import BufferReader from '../../bufferreader.js';
 describe("bufferreader", () => {
     describe("byte", () => {
         it("should read a byte correctly", () => {
@@ -20,17 +20,17 @@ describe("bufferreader", () => {
     describe("color", () => {
         it("should read a color correctly", () => {
             let reader = new BufferReader(Buffer.from("050607", "hex"));
-            expect(reader.readColor()).toEqual({R: 5, G: 6, B: 7});
+            expect(reader.readColor()).toEqual({ R: 5, G: 6, B: 7 });
         });
 
         it("should read a zero color correctly", () => {
             let reader = new BufferReader(Buffer.from("000000", "hex"));
-            expect(reader.readColor()).toEqual({R: 0, G: 0, B: 0});
+            expect(reader.readColor()).toEqual({ R: 0, G: 0, B: 0 });
         });
 
         it("should read a maximum color correctly", () => {
             let reader = new BufferReader(Buffer.from("ffffff", "hex"));
-            expect(reader.readColor()).toEqual({R: 255, G: 255, B: 255});
+            expect(reader.readColor()).toEqual({ R: 255, G: 255, B: 255 });
         });
     });
 

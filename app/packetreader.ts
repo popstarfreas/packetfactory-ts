@@ -1,4 +1,4 @@
-import BufferReader from './bufferreader';
+import BufferReader from './bufferreader.js';
 
 /**
  * Takes out the type and packet length from packet and acts the same as a HexReader

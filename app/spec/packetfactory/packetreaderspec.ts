@@ -1,4 +1,4 @@
-import PacketReader from '../../packetreader';
+import PacketReader from '../../packetreader.js';
 
 describe("packetreader", () => {
     let reader: PacketReader;

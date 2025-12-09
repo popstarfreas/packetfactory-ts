@@ -1,6 +1,6 @@
-import BufferWriter from "./bufferwriter";
-import Color from "./color";
-import NetworkText from "./networktext";
+import BufferWriter from "./bufferwriter.js";
+import Color from "./color.js";
+import NetworkText from "./networktext.js";
 
 class PacketWriter extends BufferWriter {
     private updateSize() {

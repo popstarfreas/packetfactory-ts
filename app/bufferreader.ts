@@ -1,6 +1,6 @@
-import Color from "./color";
-import NetworkText from "./networktext";
-import { bufferToText } from "./utils";
+import Color from "./color.js";
+import NetworkText from "./networktext.js";
+import { bufferToText } from "./utils.js";
 import * as utf8 from "utf8";
 
 /**

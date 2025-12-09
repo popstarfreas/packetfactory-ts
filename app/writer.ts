@@ -1,4 +1,4 @@
-import NetworkText from "./networktext";
+import NetworkText from "./networktext.js";
 
 interface Writer {
     data: Buffer;
@@ -15,7 +15,7 @@ interface Writer {
     packHex(hex: string): Writer;
     packBuffer(buffer: Buffer): Writer;
     packString(str: string): Writer;
-    packColor(color: {R:number;G:number;B:number}): Writer;
+    packColor(color: { R: number; G: number; B: number }): Writer;
     packNetworkText(networkText: NetworkText): Writer;
 }
 

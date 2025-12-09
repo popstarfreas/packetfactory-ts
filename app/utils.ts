@@ -1,9 +1,9 @@
 import * as path from 'path';
-import RawPacket from './rawpacket';
-import BufferReader from './bufferreader';
+import RawPacket from './rawpacket.js';
+import BufferReader from './bufferreader.js';
 import * as utf8 from 'utf8';
-import PacketWriter from './packetwriter';
-import BufferWriter from './bufferwriter';
+import PacketWriter from './packetwriter.js';
+import BufferWriter from './bufferwriter.js';
 
 export interface BuffersPackets {
   bufferPacket: Buffer;
@@ -74,8 +74,8 @@ export function getPacketsFromBuffer(buf: Buffer): BuffersPackets {
           if (reader.head === buf.length - 1) {
             bufferPacket = buf.slice(buf.length - 1, buf.length);
             end = true;
-          // No more bytes to read
-          } else if(reader.head === buf.length) {
+            // No more bytes to read
+          } else if (reader.head === buf.length) {
             end = true;
           }
         }

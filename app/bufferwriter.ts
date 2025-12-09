@@ -1,7 +1,7 @@
-import { textToBuffer } from './utils';
+import { textToBuffer } from './utils.js';
 import * as utf8 from 'utf8';
-import NetworkText from './networktext';
-import Writer from './writer';
+import NetworkText from './networktext.js';
+import Writer from './writer.js';
 
 class BufferWriter implements Writer {
     protected _buffer: Buffer;
@@ -112,7 +112,7 @@ class BufferWriter implements Writer {
         return this;
     }
 
-    public packColor(color: {R:number;G:number;B:number}) {
+    public packColor(color: { R: number; G: number; B: number }) {
         this.packByte(color.R);
         this.packByte(color.G);
         this.packByte(color.B);

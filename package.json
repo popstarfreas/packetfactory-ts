@@ -1,7 +1,7 @@
 {
   "name": "@popstarfreas/packetfactory",
   "type": "module",
-  "version": "6.3.0",
+  "version": "7.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/popstarfreas/packetfactory-ts.git"

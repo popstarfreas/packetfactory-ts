@@ -1,4 +1,4 @@
-import PacketWriter from '../../packetwriter';
+import PacketWriter from '../../packetwriter.js';
 
 describe("packetwriter", () => {
     it("should correctly write the type of packet", () => {
