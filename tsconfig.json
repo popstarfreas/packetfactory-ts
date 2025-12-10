@@ -4,7 +4,6 @@
         "target": "es2020",
         "sourceMap": false,
         "moduleResolution": "node16",
-        "outDir": "build",
         "strict": true
     },
     "include": [

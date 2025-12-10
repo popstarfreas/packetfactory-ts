@@ -1,16 +1,24 @@
 {
     "name": "@popstarfreas/packetfactory",
     "namespace": "PacketFactory",
-    "sources": {
-        "dir": "src",
+    "sources": [{
+        "dir": "app/src",
         "subdirs": true
     },
+   {
+        "dir": "app/test",
+        "subdirs": true,
+        "type": "dev"
+    } ],
     "package-specs": {
         "module": "es6",
-        "in-source": false,
+        "in-source": true,
         "suffix": ".js"
     },
     "dependencies": [
         "@popstarfreas/rescript-nodejs"
+    ],
+    "dev-dependencies": [
+        "@dusty-phillips/rescript-zora"
     ]
 }
