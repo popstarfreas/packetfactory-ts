@@ -2,8 +2,8 @@ import NetworkText from './networktext.js';
 import Writer from './writer.js';
 
 class BufferWriter implements Writer {
-    protected _buffer: Buffer;
-    protected _offset: number = 0;
+    _buffer: Buffer;
+    _offset: number = 0;
 
     constructor(buffer: Buffer) {
         this._buffer = buffer;

@@ -1,13 +1,18 @@
 import BufferWriter from "./bufferwriter.js";
 import Color from "./color.js";
 import NetworkText from "./networktext.js";
+import Writer from "./writer.js";
 
-class PacketWriter extends BufferWriter {
+class PacketWriter implements Writer {
+    protected _writer: BufferWriter;
+
+    constructor(buffer: Buffer) {
+        this._writer = new BufferWriter(buffer);
+    }
+
     private updateSize() {
-        const offset = this._offset;
-        this._offset = 0;
-        super.packUInt16(offset);
-        this._offset = offset;
+        const offset = this._writer._offset;
+        this._writer._buffer.writeUInt16LE(offset, 0);
     }
 
     public setType(type: number) {
@@ -17,61 +22,85 @@ class PacketWriter extends BufferWriter {
     }
 
     public packInt16(int16: number) {
-        super.packInt16(int16);
+        this._writer.packInt16(int16);
         this.updateSize();
         return this;
     }
 
     public packUInt16(uint16: number) {
-        super.packUInt16(uint16);
+        this._writer.packUInt16(uint16);
         this.updateSize();
         return this;
     }
 
     public packInt32(int32: number) {
-        super.packInt32(int32);
+        this._writer.packInt32(int32);
         this.updateSize();
         return this;
     }
 
     public packUInt32(uint32: number) {
-        super.packUInt32(uint32);
+        this._writer.packUInt32(uint32);
         this.updateSize();
         return this;
     }
 
     public packSingle(single: number) {
-        super.packSingle(single);
+        this._writer.packSingle(single);
+        this.updateSize();
+        return this;
+    }
+
+    public packDouble(single: number) {
+        this._writer.packSingle(single);
         this.updateSize();
         return this;
     }
 
     public packByte(byte: number) {
-        super.packByte(byte);
+        this._writer.packByte(byte);
         this.updateSize();
         return this;
     }
 
     public packSByte(byte: number) {
-        super.packSByte(byte);
+        this._writer.packSByte(byte);
+        this.updateSize();
+        return this;
+    }
+
+    public packInt64(int64: bigint): Writer {
+        this._writer.packInt64(int64);
+        this.updateSize();
+        return this;
+    }
+
+    public packUInt64(uint64: bigint): Writer {
+        this._writer.packUInt64(uint64);
         this.updateSize();
         return this;
     }
 
     public packHex(hex: string) {
-        super.packHex(hex);
+        this._writer.packHex(hex);
         this.updateSize();
         return this;
     }
 
     public packBuffer(buffer: Buffer) {
-        super.packBuffer(buffer);
+        this._writer.packBuffer(buffer);
+        this.updateSize();
+        return this;
+    }
+
+    public packBytes(bytes: number[]) {
+        this._writer.packBytes(bytes);
         this.updateSize();
         return this;
     }
 
     public packString(str: string) {
-        super.packString(str);
+        this._writer.packString(str);
         this.updateSize();
         return this;
     }
@@ -87,6 +116,10 @@ class PacketWriter extends BufferWriter {
         this.packByte(color.G);
         this.packByte(color.B);
         return this;
+    }
+
+    public get data() {
+        return this._writer.data;
     }
 }
 
