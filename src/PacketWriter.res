@@ -1,10 +1,9 @@
 type untypedT
 type t
-@new @module("../dumbpacketwriter.js")
+@new @module("@popstarfreas/packetfactory/dumbpacketwriter")
 external make: NodeJs.Buffer.t => untypedT = "default"
 
-@send external setType_: (untypedT, int) => t = "setType"
-let setType = (untypedT, packetType) => setType_(untypedT, packetType)
+@send external setType: (untypedT, int) => t = "setType"
 
 @send external packByte: (t, int) => t = "packByte"
 @send external packSByte: (t, int) => t = "packSByte"

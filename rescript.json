@@ -2,17 +2,17 @@
     "name": "@popstarfreas/packetfactory",
     "namespace": "PacketFactory",
     "sources": [{
-        "dir": "app/src",
+        "dir": "src",
         "subdirs": true
     },
    {
-        "dir": "app/test",
+        "dir": "test",
         "subdirs": true,
         "type": "dev"
     } ],
     "package-specs": {
         "module": "es6",
-        "in-source": true,
+        "in-source": false,
         "suffix": ".js"
     },
     "dependencies": [

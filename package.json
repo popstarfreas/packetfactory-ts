@@ -1,7 +1,7 @@
 {
   "name": "@popstarfreas/packetfactory",
   "type": "module",
-  "version": "7.0.1",
+  "version": "7.1.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/popstarfreas/packetfactory-ts.git"
@@ -12,8 +12,23 @@
     "build": "tsc -p ./",
     "test": "npm run build && jasmine --config=jasmine.json",
     "test:rescript": "pta app/test/*.test.js",
-    "makemodule": "rm -rf ./module/* && tsc --declaration -p ./ && mv -v app/*.js module && cp package.json module/package.json && cp -r app/src/ app/test module/ && cp rescript.json module/rescript.json",
+    "makemodule": "./makemodule.sh",
     "makerelease": "./makerelease.sh"
+  },
+  "exports": {
+    "./bufferreader": "./app/bufferreader.js",
+    "./bufferwriter": "./app/bufferwriter.js",
+    "./color": "./app/color.js",
+    "./dumbpacketwriter": "./app/dumbpacketwriter.js",
+    "./networktext": "./app/networktext.js",
+    "./packetreader": "./app/packetreader.js",
+    "./packetwriter": "./app/packetwriter.js",
+    "./rawpacket": "./app/rawpacket.js",
+    "./utils": "./app/utils.js",
+    "./writer": "./app/writer.js",
+    "./src/*": "./src/*",
+    "./lib/es6/*": "./lib/es6/*",
+    "./lib/js/*": "./lib/js/*"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +38,7 @@
   "devDependencies": {
     "@dusty-phillips/rescript-zora": "^5.0.1",
     "@rescript/core": "^1.6.1",
+    "@rescript/runtime": "^12.0.1",
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.7.3",
     "jasmine": "^3.4.0",

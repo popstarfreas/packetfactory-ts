@@ -7,3 +7,7 @@ module/
 .merlin
 lib/
 .bsb.lock
+app/**/*.js
+app/**/*.d.ts
+app/*.js
+app/*.d.ts
