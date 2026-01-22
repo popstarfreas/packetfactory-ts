@@ -2,7 +2,8 @@
 
 rm -rf ./module/*
 tsc --declaration -p ./
-mv -v app/*.js app/*.d.ts module
+mkdir -p module/app
+mv -v app/*.js app/*.d.ts module/app/
 cp package.json module/package.json
-cp -r app/src/ app/test module/
+cp -r src/ test module/
 cp rescript.json module/rescript.json
